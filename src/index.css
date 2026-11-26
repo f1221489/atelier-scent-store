@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm Ivory & Deep Wood Palette */
+  --color-ivory: #f7f4ef;
+  --color-linen: #efebe3;
+  --color-alabaster: #fcfbf8;
+  --color-stone-border: #e5ddd1;
+
+  --color-wood-950: #1f1714;
+  --color-wood-900: #2c221e;
+  --color-wood-800: #3f312b;
+  --color-wood-700: #57463e;
+  --color-wood-600: #725e53;
+  --color-wood-500: #8c786c;
+  --color-wood-400: #aba096;
+
+  --color-cedar-600: #7d5336;
+  --color-cedar-500: #966644;
+  --color-cedar-200: #e7d5c3;
+  --color-cedar-100: #f3e9de;
+
+  --color-moss-700: #3d4c3e;
+  --color-moss-600: #4f6150;
+  --color-moss-100: #e9efe9;
+
+  /* Editorial Font Families */
+  --font-serif: "Noto Serif TC", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cormorant Garamond", "Noto Serif TC", Georgia, serif;
+  --font-sans: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-ivory);
+    color: var(--color-wood-900);
+  }
+
+  button:not(:disabled),
+  a[href] {
+    cursor: pointer;
+  }
+}
+
+/* Subtle organic grain texture overlay for warm paper feel */
+.paper-surface {
+  background-color: var(--color-alabaster);
+  background-image: radial-gradient(rgba(44, 34, 30, 0.025) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
